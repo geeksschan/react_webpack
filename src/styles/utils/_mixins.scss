@@ -1,0 +1,102 @@
+@charset "UTF-8";
+/* _mixins.scss */
+@use "sass:list";
+@use "sass:map";
+
+
+@mixin reset-button {
+  border-radius: 0;
+  background-color: transparent;
+}
+
+@mixin reset-all-button {
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background-color: transparent;
+}
+
+@mixin reset-all-input {
+  padding: 0;
+  border: 0;
+  background-color: transparent;
+}
+
+@mixin blind {
+  position: absolute;
+  overflow: hidden;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  clip: rect(0, 0, 0, 0);
+}
+
+// mixins : layout
+@mixin absolute-all($top: 0, $right: 0, $bottom: 0, $left: 0) {
+  position: absolute;
+  top: $top;
+  right: $right;
+  bottom: $bottom;
+  left: $left;
+}
+
+@mixin fixed-all($top: 0, $right: 0, $bottom: 0, $left: 0) {
+  position: fixed;
+  top: $top;
+  right: $right;
+  bottom: $bottom;
+  left: $left;
+}
+
+@mixin clearfix {
+  &::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+// mixins : text
+@mixin ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+@mixin ellipsis-multiline($line) {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: $line;
+  -webkit-box-orient: vertical;
+  word-break: break-all;
+}
+
+@mixin word-break {
+  word-break: keep-all;
+  word-wrap: break-word;
+}
+
+@mixin word-break-all {
+  word-break: break-all;
+  word-wrap: break-word;
+}
+
+// mixins : media query
+@mixin media($breakpoint, $breakpoints: $G-breakpoints) {
+  // If $breakpoint is a key that exists in
+  // $G-breakpoints, get and use the value
+  @if map-has-key($breakpoints, $breakpoint) {
+    $breakpoint: map-get($breakpoints, $breakpoint);
+  }
+
+  @media screen and (min-width: #{$breakpoint}) {
+    @content;
+  }
+}
+
+@mixin landscape() {
+  @media screen and (orientation: landscape) {
+    @content;
+  }
+}

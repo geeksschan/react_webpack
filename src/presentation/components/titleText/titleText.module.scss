@@ -1,0 +1,32 @@
+@charset "UTF-8";
+/* titleText.module.scss */
+
+strong {
+  &.text {
+    --text-color: #F0A500;
+    --border-color: #000;
+  }
+}
+
+.text {
+  --text-color: #fff;
+  --border-color: #000;
+
+  display: inline-grid;
+  font-weight: bold;
+  font-size: inherit;
+  grid-template-areas: 'text';
+	letter-spacing: 0.12em;
+
+  &::before {
+		content: attr(data-text);
+		font-size: inherit;
+		grid-area: text;
+		-webkit-text-stroke: 0.2em var(--border-color);
+	}
+	
+	& > span {
+		color: var(--text-color);
+		grid-area: text;
+	}
+}

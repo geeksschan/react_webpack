@@ -1,0 +1,15 @@
+@charset "UTF-8";
+/* _variables.scss */
+
+// Fonts
+$G-font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, "Hiragino Sans", Arial, "MS PGothic", sans-serif;
+
+// Colors
+$G-color-default: #000;
+
+// Breakpoints
+$G-breakpoints: (
+  mobile: 375px,
+  tablet: 768px,
+  pc: 1024px,
+);

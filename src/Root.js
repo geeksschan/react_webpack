@@ -1,9 +1,37 @@
-import React from 'react';
-import './style.scss';
+import React, {useState, useEffect} from 'react';
+
+import PostItem from './presentation/components/postItem/PostItem';
+import PostList from './presentation/components/postList/postList';
+
+import "@scss/global.scss";
 
 const Root = () => {
+
+  const [name, setName] = useState('');
+  const [count, setCount] = useState(0);
+
+  function onChange(e) {
+    const inputText = e.target.value;
+    setName(inputText);
+  }
+
+  function onClick() {
+    setCount(count + 1);
+  }
+
+  useEffect(() => {
+    document.title = `hello example ${count}`;
+  });
+
   return (
-    <h3 className="title">Hello, React</h3>
+    <div>
+      <PostList>
+        <PostItem />
+        <PostItem />
+        <PostItem />
+        <PostItem />
+      </PostList>
+    </div>
   );
 };
 
