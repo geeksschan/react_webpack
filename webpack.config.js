@@ -71,7 +71,7 @@ module.exports = {
       '@': path.resolve(__dirname, 'src'),
       '@components': path.resolve(__dirname, 'src/presentation/components'),
       '@common': path.resolve(__dirname, 'src/presentation/common'),
-      '@scss': path.resolve(__dirname, 'src/styles'),
-      }
+      '@styles': path.resolve(__dirname, 'src/styles'),
+    }
   }
 }

@@ -12,7 +12,7 @@ const tempProps = {
   image: 'http://mrparkerbjj.com/wp-content/uploads/2021/07/maxresdefault-1.jpg'
 };
 
-const PostItemInner = () => {
+const PostItemInner = ({}) => {
 
   const { title, titleEmphsis, image } = tempProps;
 

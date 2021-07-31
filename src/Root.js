@@ -3,7 +3,7 @@ import React, {useState, useEffect} from 'react';
 import PostItem from './presentation/components/postItem/PostItem';
 import PostList from './presentation/components/postList/postList';
 
-import "@scss/global.scss";
+import "@styles/global.scss";
 
 const Root = () => {
 
