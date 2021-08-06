@@ -1,7 +1,21 @@
 @charset "UTF-8";
 /* postList.scss */
 
+@import '@styles/utils';
+
 .list {
   display: flex;
   flex-wrap: wrap;
+  gap: 5px 0;
+  margin: 0 -2.5px;
+
+  @include media("tablet") {
+    gap: 10px 0;
+    margin: 0 -5px;
+  }
+
+  @include media("pc") {
+    gap: 20px 0;
+    margin: 0 -10px;
+  }
 }

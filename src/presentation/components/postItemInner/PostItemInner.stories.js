@@ -15,7 +15,9 @@ const Template = (args) => {
 
 export const Default = Template.bind();
 
-Default.args = {};
+Default.args = {
+  ...tempDataJson.default
+};
 
 Default.story = {
   name: 'default',

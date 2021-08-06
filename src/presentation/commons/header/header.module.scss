@@ -1,0 +1,14 @@
+@charset "UTF-8";
+
+.header {
+  display: flex;
+  align-items: center;
+  height: 50px;
+  padding: 0 15px;
+  box-sizing: border-box;
+  border-bottom: 1px solid #ddd;
+
+  .title {
+    font-size: 18px;
+  }
+}

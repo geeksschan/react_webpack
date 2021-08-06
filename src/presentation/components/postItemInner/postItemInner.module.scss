@@ -20,26 +20,39 @@
   display: flex;
   flex-direction: column;
   height: 100%;
+  box-sizing: border-box;
+  box-shadow: 0 2px 6px 1px rgba(50,50,50, 0.14);
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    height: 40px;
+    width: 100%;
+    background-color: rgba(#000, 0.7);
+  }
+
+  &::before {
+    top: 0;
+  }
+  &:after {
+    bottom: 0;
+  }
 }
 
 .thumbnail {
-  position: relative;
+  @include absolute-all;
+  z-index: -1;
 
   &::before {
     content: '';
     display: block;
     width: 100%;
-    padding-top: 56.25%;
   }
-}
-
-.image_box {
-  @include absolute-all;
-
-  &::before {
+  &::after {
     content: '';
     @include absolute-all;
-    background-color: rgba(0,0,0,0.3);
+    background-color: rgba(0,0,0,0.05);
   }
 }
 
@@ -50,81 +63,68 @@
   object-fit: cover;
 }
 
-.title {
-  position: absolute;
-  top: 0;
-  left: 4px;
-  padding: 10px;
-  font-size: var(--titleText-font-size);
-
-  @include word-break;
-}
-
-.tag_area {
-  margin: 5px;
+.info {
+  position: relative;
+  margin-top: auto;
+  padding: 0 20px 20px;
+  display: flex;
+  height: 50%;
+  flex-direction: column;
+  flex: 0 1 auto;
+  z-index: 1;
+  box-sizing: border-box;
 }
 
 .tag_list {
   display: flex;
-  flex-wrap: wrap;
+  margin-bottom: 8px;
   gap: 5px;
+
+  .tag_item {
+    display: inline-flex;
+    padding: 10px;
+    height: 22px;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    color: #fff;
+    background-color: #81c483;
+    border-radius: 10px;
+    box-sizing: border-box;
+  }
 }
 
-.tag_item {
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 30px;
-  padding: 0 8px;
-  height: 22px;
-  font-size: 11px;
-  font-weight: bold;
-  color: #393B44;
-  background-color: #F1F3F8;
-}
-
-.description {
-  margin: 10px 10px 15px;
-  font-size: 14px;
-  line-height: 1.4;
+.title {
+  font-size: var(--titleText-font-size);
+  color: #fff;
+  @include word-break;
 }
 
 .meta_area {
-  position: relative;
-  margin: auto 10px 0;
-  padding: 6px 0;
-  font-size: 12px;
-  color: #999;
   display: flex;
+  margin-top: auto;
   justify-content: flex-end;
-
-  &::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    border-top: 1px solid currentColor;
-    border-radius: 5px;
-  }
 }
 
 .meta {
   position: relative;
+  display: flex;
+  align-items: center;
+  font-size: 12px;
+  color: #fff;
 
   & + .meta {
-    margin-left: 6px;
-    padding-left: 7px;
+    margin-left: 5px;
+    padding-left: 6px;
 
     &::before {
       content: '';
       position: absolute;
-      top: 50%;
       left: 0;
-      width: 2px;
-      height: 2px;
+      width: 3px;
+      height: 3px;
       border-radius: 50%;
-      background-color: currentColor;
+      background-color: #fff;
     }
   }
 }

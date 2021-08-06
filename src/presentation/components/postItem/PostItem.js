@@ -1,17 +1,15 @@
 import React from 'react'
 import classnames from 'classnames/bind';
 
-import PostItemInner from '../postItemInner/PostItemInner';
-
 import styles from './postItem.module.scss';
 const cx = classnames.bind(styles);
 
-const PostItem = () => {
+const PostItem = ({children}) => {
   return (
     <div className={cx('item')} >
-      <PostItemInner />
+      {children}
     </div>
   )
 }
 
-export default PostItem
+export default PostItem;

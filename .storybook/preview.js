@@ -1,10 +1,34 @@
+import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport'
+import { create } from '@storybook/theming'
+
 export const parameters = {
-  actions: { argTypesRegex: "^on[A-Z].*" },
-  controls: {
-    matchers: {
-      color: /(background|color)$/i,
-      date: /Date$/,
+  options: {
+    theme: create({
+        base: 'light',
+        brandTitle: '주짓수 스쿨',
+        brandImage: '',
+        brandUrl: '#',
+        fontBase: '"Open Sans", sans-serif',
+    }),
+    hierarchyRootSeparator: /\|/,
+    panelPosition: 'right',
+  },
+  viewport: {
+    viewports: {
+      iphone8: {
+        name: "iPhone 8",
+        styles: {
+          height: "667px",
+          width: "375px",
+        },
+        type: "mobile"
+      },
+      ...INITIAL_VIEWPORTS,
     },
+    defaultViewport: 'iphone8'
+  },
+  controls: {
+    expanded: true
   },
 }
 

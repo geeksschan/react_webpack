@@ -27,9 +27,6 @@ const Root = () => {
     <div>
       <PostList>
         <PostItem />
-        <PostItem />
-        <PostItem />
-        <PostItem />
       </PostList>
     </div>
   );
