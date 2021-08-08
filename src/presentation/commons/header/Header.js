@@ -8,7 +8,9 @@ const cx = classnames.bind(styles);
 const Header = () => {
   return (
     <header className={cx('header')}>
-      <h1 className={cx('title')}>주짓수팩토리</h1>
+      <div className={cx('container')}>
+        <h1 className={cx('title')}>주짓수팩토리</h1>
+      </div>
     </header>
   )
 }

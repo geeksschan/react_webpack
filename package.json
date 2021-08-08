@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "webpack.config.js",
+  "proxy": "https://e77374c506f5.ngrok.io",
   "scripts": {
     "start": "webpack serve --hot",
     "build": "webpack",
@@ -47,6 +48,8 @@
     "postcss-loader": "^6.1.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
+    "react-redux": "^7.2.4",
+    "redux": "^4.1.1",
     "resolve-url-loader": "^4.0.0",
     "sass-loader": "^12.1.0",
     "style-loader": "^3.0.0",
@@ -55,6 +58,8 @@
     "webpack-dev-server": "^3.11.2"
   },
   "dependencies": {
+    "@reduxjs/toolkit": "^1.6.1",
+    "axios": "^0.21.1",
     "react-icons": "^4.2.0"
   }
 }

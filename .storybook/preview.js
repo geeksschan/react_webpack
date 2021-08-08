@@ -1,5 +1,7 @@
 import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport'
 import { create } from '@storybook/theming'
+import store from '../src/store';
+import { Provider } from 'react-redux';
 
 export const parameters = {
   options: {
@@ -33,3 +35,11 @@ export const parameters = {
 }
 
 import '@.storybook/storybook.scss';
+
+export const decorators = [
+  (Story) => (
+    <Provider store={store}>
+      <Story />
+    </Provider>
+  ),
+]

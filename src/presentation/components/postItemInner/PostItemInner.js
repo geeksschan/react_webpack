@@ -5,7 +5,7 @@ import styles from './postItemInner.module.scss';
 
 const cx = classnames.bind(styles);
 
-const PostItemInner = ({title, titleEmphsis, image}) => {
+const PostItemInner = ({title, image}) => {
   
 
   return (
@@ -24,7 +24,7 @@ const PostItemInner = ({title, titleEmphsis, image}) => {
           })}
         </ul>
         <h3 className={cx('title')}>
-          Slipknot’s Concert in Phoenix Showed Why Mayhem Fest Died
+          {title}
         </h3>
         <div className={cx('meta_area')}>
           <div className={cx('meta')}>

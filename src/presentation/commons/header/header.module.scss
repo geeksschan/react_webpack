@@ -1,12 +1,24 @@
 @charset "UTF-8";
 
 .header {
+  position: sticky;
+  top: 0;
+  left: 0;
   display: flex;
   align-items: center;
   height: 50px;
   padding: 0 15px;
   box-sizing: border-box;
-  border-bottom: 1px solid #ddd;
+  background-color: rgba(#fff, 0.95);
+  backdrop-filter: blur(3px);
+  z-index: 100;
+  box-shadow: inset 0px -1px 0px #f3f3f4;
+
+  .container {
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+  }
 
   .title {
     font-size: 18px;
