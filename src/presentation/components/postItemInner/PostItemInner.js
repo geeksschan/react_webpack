@@ -34,8 +34,7 @@ const PostItemInner = ({title, image}) => {
             <span>posted on 2021.07.01</span>
           </div>
         </div>
-      </div>
-      
+      </div>  
     </div>
   )
 }

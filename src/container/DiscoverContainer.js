@@ -10,11 +10,6 @@ const DiscoverContainer = ({children}) => {
   const articleList = useSelector((state) => state.articleList.list)
   const dispatch = useDispatch();
 
-  axios.get('/api/posts')
-  .then((Response)=>{console.log(Response.data)})
-  .catch((Error)=>{console.log(Error)});
-
-
   return (
     <PostList>
       {articleList.map((item) => {

@@ -1,0 +1,136 @@
+@charset "UTF-8";
+/* posetEnd.scss */
+@import '@styles/utils';
+
+.post {
+  height: 100%;
+
+  &::before {
+    content: '';
+    position: relative;
+    display: block;
+    height: 60%;
+    z-index: -1;
+  }
+}
+
+.cover {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 60%;
+  display: flex;
+  flex-direction: column;
+  z-index: -1;
+}
+
+.thumbnail_area { 
+  @include absolute-all;
+  z-index: -1;
+
+  .image {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  } 
+}
+
+.info {
+  margin-top: auto;
+  padding: 20px;
+  background: linear-gradient(#000 0%, #000 100%);
+  background: linear-gradient(transparent, #00000080, #000320);
+  box-sizing: border-box;
+
+  .tag_list {
+    display: flex;
+    margin-bottom: 8px;
+    gap: 5px;
+  
+    .tag_item {
+      display: inline-flex;
+      padding: 10px;
+      height: 22px;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      color: #fff;
+      background-color: #81c483;
+      border-radius: 10px;
+      box-sizing: border-box;
+    }
+  }
+
+  .title {
+    margin-bottom: 20px;
+    max-width: 700px;
+    display: flex;
+    font-size: 26px;
+    color: #fff;
+  }
+
+  .meta_area {
+    display: flex;
+    margin-top: auto;
+    justify-content: flex-end;
+  }
+  
+  .meta {
+    position: relative;
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+    color: #fff;
+  
+    & + .meta {
+      margin-left: 5px;
+      padding-left: 6px;
+  
+      &::before {
+        content: '';
+        position: absolute;
+        left: -1px;
+        width: 3px;
+        height: 3px;
+        border-radius: 50%;
+        background-color: #fff;
+      }
+    }
+  }
+}
+
+.content_area {
+  margin: -10px 5px 5px;
+  padding: 20px 20px;
+  // background-color: rgba(#fff, 0.5);
+  // backdrop-filter: blur(5px);
+  box-sizing: border-box;
+  background-color: #fff;
+  border-radius: 15px;
+  // box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
+  box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+
+  .description {
+    margin: 0 auto 20px;
+    max-width: 700px;
+    font-size: 15px;
+    line-height: 1.5;
+    color: #333;
+  }
+}
+
+.youtube {
+  position: relative;
+
+  &::before {
+    content: '';
+    display: block;
+    padding-top: 56.25%;
+  }
+
+  iframe {
+    @include absolute-all;
+  }
+}
